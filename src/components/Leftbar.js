@@ -2,7 +2,8 @@ import { useSelector } from "react-redux";
 
 const Leftbar = () => {
     const isMenuOpen = useSelector((store)=>store.app.isMenuOpen)
-    if (!isMenuOpen) return null
+    if (!isMenuOpen) return null // This is called early retrun
+    // The below code will only be executed if the above if statement fails
     return ( 
     <div className="w-36 text-center">
         <div className="flex flex-col shadow">

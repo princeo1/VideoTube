@@ -5,7 +5,7 @@ const Body = () => {
             {/* <div className="w-[12%] bg-amber-700">
             </div> */}
             <Leftbar/>
-            <div className="bg-amber-200 w-[89%] h-screen"></div>
+            <div className="bg-amber-200 min-w-[89%] w-[100%] h-screen"></div>
         </div>
     )
 }
