@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import {Link} from 'react-router-dom';
 
 const Leftbar = () => {
     const isMenuOpen = useSelector((store)=>store.app.isMenuOpen)
@@ -7,7 +8,7 @@ const Leftbar = () => {
     return ( 
     <div className="w-36 text-center">
         <div className="flex flex-col shadow">
-                <h3 className="mt-2 font-bold">HOME</h3>
+                <Link to="/"><h3 className="mt-2 font-bold">HOME</h3></Link>
                 <h3 className="font-bold">Shorts</h3>
                 <h3 className="font-bold">Subscription</h3>
             </div>

@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import { youtube_api_url } from "../utils/constants";
 import VideoCard from "./VideoCard";
+import {Link } from 'react-router-dom';
 const VideoContainer = () => {
     const [videoList, setVideoList] = useState([]);
     const getVideos = async () => {
@@ -16,7 +17,12 @@ const VideoContainer = () => {
     return (
         <div className="w-full flex flex-wrap">
             {
-                videoList.map((video)=><VideoCard key={video.id}info={video}/>)
+                videoList.map((video)=>(
+                    <Link key={video.id} to={"/watch?v=" + video.id}>
+                    <VideoCard info={video}/>
+                    </Link>
+                
+            ))
             }
         </div>
     )
