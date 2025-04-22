@@ -1,3 +1,4 @@
+import RightContent from "./RightContent";
 import Leftbar from "./Leftbar";
 const Body = () => {
     return (
@@ -5,7 +6,8 @@ const Body = () => {
             {/* <div className="w-[12%] bg-amber-700">
             </div> */}
             <Leftbar/>
-            <div className="bg-amber-200 min-w-[89%] w-[100%] h-screen"></div>
+            <RightContent/>
+            {/* <div className="bg-amber-200 min-w-[89%] w-[100%] h-screen"></div> */}
         </div>
     )
 }
