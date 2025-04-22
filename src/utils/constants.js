@@ -1,0 +1,2 @@
+const my_api_key = 'AIzaSyDFzUrF2ezX1zQoT5gJVAqiEiQ_AGwE47o'
+export const youtube_api_url = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=' + my_api_key;
