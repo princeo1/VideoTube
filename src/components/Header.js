@@ -1,11 +1,34 @@
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
+import { useState,useEffect } from "react";
+import { YOUTUBE_SEARCH_API } from "../utils/constants";
 
 // import hamburger from '../allimages/hamburger.png'
 const Header = () => {
+    const [searchQuery, setSearchQuery] = useState("");
+    
+    useEffect(()=>{
+        // Make an api call for every key press 
+        // if difference between 2 api calls are less than 200 ms
+        // ddecline api call
+        const timer = setTimeout(()=> getSearchSuggestions(),200);
+        return () => {
+            clearTimeout(timer);
+        }
+    },[searchQuery]);
+
+    const getSearchSuggestions = async () => {
+        console.log("api call- " + searchQuery);
+        const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+        const json = await data.json();
+        console.log(json[1]);
+    }
     const dispatch = useDispatch();
     const toggleMenuHandler = () => {
         dispatch(toggleMenu())
+    }
+    const handleInputChange = () => {
+        console.log()
     }
     return (
         <div className="grid grid-flow-col p-5 shadow">
@@ -20,7 +43,10 @@ const Header = () => {
             </div>
             <div className="col-span-10 flex items-center justify-center">
                 <input type="text"
-                    className="border h-8 border-gray-400 rounded-l-full p-2 w-1/2"/>
+                    className="border h-8 border-gray-400 rounded-l-full p-2 w-1/2"
+                    value={searchQuery}
+                    onChange={(e)=>setSearchQuery(e.target.value)}
+                    />
                 <button className="h-8 rounded-r-full border border-gray-400">
                     <img alt="search-icon"
                         className="h-7 rounded-r-full"
