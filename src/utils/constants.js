@@ -10,13 +10,13 @@ export const commentsData = [
         replies: [
             {
                 name: "Prince Soni",
-                text: "This App is very well implemented",
+                text: "reply - 1",
                 replies: [
                 ]
             },
             {
                 name: "Prince Soni",
-                text: "This App is very well implemented",
+                text: "reply - 1",
                 replies: [
                     {
                         name: "Prince Soni",
@@ -24,11 +24,11 @@ export const commentsData = [
                         replies: [
                             {
                                 name: "Prince Soni",
-                                text: "This App is very well implemented",
+                                text: "reply - 2",
                                 replies: [
                                     {
                                         name: "Prince Soni",
-                                        text: "This App is very well implemented",
+                                        text: "reply - 3",
                                         replies: [
                                         ]
                                     }
